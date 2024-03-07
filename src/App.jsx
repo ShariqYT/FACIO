@@ -28,7 +28,7 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path='/FACIO/' element={<Welcome />} />
-                <Route path='/FACIO/FACIO/sign-in' element={<Login />} />
+                <Route path='/FACIO/sign-in' element={<Login />} />
                 <Route path='/FACIO/reset' element={<PasswordReset />} />
                 <Route path='/FACIO/admin' element={<ProtectedRoute user={user} > <AdminPage /> </ProtectedRoute>} />
                 <Route path='/FACIO/staff-student' element={<ProtectedRoute user={user} > <Page /> </ProtectedRoute>} />
