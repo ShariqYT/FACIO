@@ -32,7 +32,7 @@ const ErrorPage = () => {
                         <div className={styles.contant_box_404}>
                             <h3 style={{ textAlign: 'center' }} className={styles.h2}>Look like you're lost</h3>
                             <p style={{ textAlign: 'center' }}>the page you are looking for not available!</p>
-                            <Link to="/" className={styles.link_404}>Go Back</Link>
+                            <Link to="/FACIO/" className={styles.link_404}>Go Back</Link>
                         </div>
                     </div>
                 </section>

@@ -21,7 +21,7 @@ const Page = () => {
   const handleClick = () => {
     signOut(auth).then(val => {
       // console.log(val, "val")
-      history('/sign-in')
+      history('/FACIO/sign-in')
     })
   }
   document.title = "Staff/Student - SmartAttend";

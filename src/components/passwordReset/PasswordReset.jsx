@@ -25,7 +25,7 @@ function PasswordReset() {
 
         sendPasswordResetEmail(auth, reset).then(data => {
             alert("A link to reset your password will be sent to your Email.")
-            history("/sign-in")
+            history("/FACIO/sign-in")
         }).catch(err => {
             alert(err.code)
         })
@@ -49,7 +49,7 @@ function PasswordReset() {
                             <input required type="email" name="reset" className="passInput" placeholder="Email address" />
                             <input className="btn" value="Reset" type='submit' />
                         </form>
-                        <Link to="/sign-in" className="btn-back">Login</Link>
+                        <Link to="/FACIO/sign-in" className="btn-back">Login</Link>
                     </div>
                 </div>
             }

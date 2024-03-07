@@ -60,9 +60,9 @@ function Login() {
                 // console.log(data, "authData");
 
                 if (lemail === 'smartattend@admin.com') {
-                    history('/admin');
+                    history('/FACIO/admin');
                 } else {
-                    history('/staff-student');
+                    history('/FACIO/staff-student');
                 }
             })
             .catch(error => {
@@ -72,7 +72,7 @@ function Login() {
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, googleProvider).then((res) => {
-            history('/staff-student')
+            history('/FACIO/staff-student')
         }).catch((err) => {
             alert(err)
         })
@@ -136,7 +136,7 @@ function Login() {
                                             Sign in with Google
                                         </button>
                                         <input className="btn" type="submit" value="Login" />
-                                        <Link to="/reset" id='reset_pass' >Reset password</Link>
+                                        <Link to="/FACIO/reset" id='reset_pass' >Reset password</Link>
                                         <p>
                                             <span>Don't have an account?</span>
                                             <b onClick={toggle} className="pointer text-dec-line">Sign up here</b>
