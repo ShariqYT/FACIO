@@ -10,7 +10,7 @@ const ErrorPage = () => {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, 2000)
+        }, 1000)
 
         return
     }, [])
@@ -22,7 +22,7 @@ const ErrorPage = () => {
                 color="#000"
                 loading={loading}
                 size={200}
-                speedMultiplier={1}
+                speedMultiplier={2.1}
             /></div > :
                 <section className={styles.page_404}>
                     <div className={styles.flex}>

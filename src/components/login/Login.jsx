@@ -6,14 +6,14 @@ import { auth, googleProvider } from '../../config/firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, signInWithPopup } from 'firebase/auth';
 import { RingLoader } from 'react-spinners';
 
-function Login() {
+function Login({ user }) {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, 2000)
+        }, 1000)
 
         return
     }, [])
@@ -59,11 +59,7 @@ function Login() {
             .then(data => {
                 // console.log(data, "authData");
 
-                if (lemail === 'smartattend@admin.com') {
-                    history('/FACIO/admin');
-                } else {
-                    history('/FACIO/staff-student');
-                }
+                history('/FACIO/staff-student')
             })
             .catch(error => {
                 alert(error.code);
@@ -86,7 +82,7 @@ function Login() {
                 color="#000"
                 loading={loading}
                 size={200}
-                speedMultiplier={1}
+                speedMultiplier={2.1}
             /></div > :
 
                 <div id="container" className={`container ${isSignIn ? 'sign-in' : 'sign-up'}`}>
