@@ -7,6 +7,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVe
 import { RingLoader } from 'react-spinners';
 
 function Login({ user }) {
+    
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -32,14 +33,15 @@ function Login({ user }) {
         const password = e.target.password.value;
         const cpassword = e.target.cpassword.value;
 
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordRegex.test(password)) {
+            alert("Password must contain at least 8 characters, including alphabets ( Uppercase and Lowercase ), numbers, and symbols.");
+            return;
+          }
         if (cpassword === password) {
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     alert("Your account has been created!");
-                })
-                .catch((error) => {
-                    // console.error("Error creating user:", error);
-                    alert(error.code);
                 });
         } else {
             alert("Password doesn't match with Confirm Password");
@@ -62,7 +64,7 @@ function Login({ user }) {
                 history('/FACIO/staff-student')
             })
             .catch(error => {
-                alert(error.code);
+                alert("Invalid username or password");
             });
     };
 
@@ -70,7 +72,7 @@ function Login({ user }) {
         signInWithPopup(auth, googleProvider).then((res) => {
             history('/FACIO/staff-student')
         }).catch((err) => {
-            alert(err)
+            alert("Google sign-in failed!")
         })
     }
 
